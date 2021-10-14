@@ -11,9 +11,10 @@ include './header.inc.php';
                         $prenom = $_POST['prenom'];
                         $pseudo = $_POST['pseudo'];
                         $password = $_POST['password'];
+                        $nomAvatar = $_POST['avatar']
                         
                     $sql = ("INSERT INTO `user` (`nom`, `prenom`, `username`, `password`, `avatar`, `commentaire`, `role`) VALUES
-                            ('$nom', '$prenom', '$pseudo', '$password','','','');");
+                            ('$nom', '$prenom', '$pseudo', '$password','$nomAvatar','','');");
                     
                     $resultats = $connexion->exec($sql);
                     
