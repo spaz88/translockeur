@@ -13,8 +13,10 @@ include './header.inc.php';
                         $password = $_POST['password'];
                         $nomAvatar = $_POST['avatar'];
                         
+                        $crypted_password = md5($password); //encryption du password (pour se connecter, hasher le password rentré par le user et le comparer avec celui dans la bdd
+                        
                     $sql = ("INSERT INTO `user` (`nom`, `prenom`, `username`, `password`, `avatar`, `commentaire`, `role`) VALUES
-                            ('$nom', '$prenom', '$pseudo', '$password','$nomAvatar','','');");
+                            ('$nom', '$prenom', '$pseudo', '$crypted_password','$nomAvatar','','');");
                     
                     $resultats = $connexion->exec($sql);
                     
