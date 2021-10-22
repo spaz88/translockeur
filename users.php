@@ -80,7 +80,7 @@ include './header.inc.php';
                 $password = utf8_encode($user['password']);
                 $nom = utf8_encode($user['nom']);
                 $prenom = utf8_encode($user['prenom']);
-                $avatar = utf8_encode($user['avatar']);
+                $avatar = $user['avatar'];
                 $commentaire = utf8_encode($user['commentaire']);
                 $role = utf8_encode($user['role']);
 
@@ -96,7 +96,26 @@ include './header.inc.php';
                         <td width=15%><?php echo $password ?></td>
                         <td width=15%><?php echo $nom ?></td>
                         <td width=15%><?php echo $prenom ?></td>
-                        <td width=15%><?php echo $avatar ?></td>
+                        
+                        <td width=15%><?php //on recupere les photos
+            
+                            $sqlAvatar = "SELECT * FROM user WHERE id = $id ";
+                            $resultatsAvatar = $connexion->query($sqlAvatar);
+                            $avatar = $resultatsAvatar->fetch();
+
+                            while ($avatar != false){
+                                $cheminAvatar = "images/users/min/" . $user['avatar']; // le resultat est images/users/min/?.jpg
+                        ?>
+                            <img src = "<?php echo $cheminAvatar; ?>" alt = "Image" width="60%" height="70%"></a>
+
+
+                        <?php
+                            //on reprend puis on finit la boucle while
+                            $avatar = $resultatsAvatar->fetch();
+                            }
+                        ?></td>  
+                        
+                        
                         <td width=15%><?php echo $commentaire ?></td>
                         <td width=10%><?php echo $role ?></td>
 
