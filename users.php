@@ -46,9 +46,9 @@ include './header.inc.php';
                 ?>
             
                 <div class="col-md-12">
-                    <p class="text-center">
+                    <p class="text-center"><br>
                         Voici la liste d'utilisateurs enregistrés !
-                    </p>
+                    </p><br>
                 </div>
                 <!-- Si il y a des users enregistrés (id>0), alors on affiche le tableau. Sinon, on affiche un message d'erreur -->
                 <!-- Sinon, on affiche un message d'erreur : "Pas d'utilisateurs enregistré pour le moment..." -->
