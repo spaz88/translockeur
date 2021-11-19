@@ -37,7 +37,7 @@ include './header.inc.php';
         <div class="row">
             <div class="col-md-12">
                 <p class="text-center">
-                    Vous avez réussi a créer votre compte !
+                    <?php echo "<span style='color:green;'>Vous avez réussi à créer vôtre compte !</span>"; ?>
                 </p>
             </div>
         </div>
@@ -61,7 +61,7 @@ include './header.inc.php';
         <div class="row">
             <div class="col-md-12">
                 <p class="text-center">
-                    Une erreur est survenu !
+                    <?php echo "<span style='color:red;'>Une erreur est survenue !</span>"; ?>
                 </p>
             </div>
         </div>
